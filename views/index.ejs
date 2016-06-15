@@ -1,0 +1,40 @@
+<% include ./partials/header %>
+
+    <div class='ui main text container' >
+        <div class='ui huge header'>  RESTful Blog App </div>
+        <div class='ui top attached segment'>
+            <div class = 'ui divided items'>
+                
+                <% blogs.forEach(function(b){%>
+                    <div class='item'>
+                        <div class='image '>
+                        <img src="<%= b.img %>">
+                        </div>
+                        <div class='content'>
+                        <a class='header' href='/blogs/<%=b._id %>'><%= b.header %> </a>
+                            <div class='meta'>  <span><%=b.created.toDateString()%></span></div>
+                            <div class='description'>
+                                <%if(b.bd.length>80){%>
+                                <%- b.bd.substring(0,80) + " ..."%>
+                                <% }else{ %>
+                                <%- b.bd%>
+                                <% }%>
+                            </div>
+                            <div class='extra'>
+                                <a class='ui floated basic green button' href='/blogs/<%=b._id %>'>
+                                    Read More! <i class="right chevron icon"></i>
+                                </a>
+                                <a class='ui orange basic button' href='/blogs/<%=b._id %>/edit'> Edit! </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+            <% }) %>
+            </div>
+        </div>
+</div>
+     
+            
+            </div>
+            <% include ./partials/footer %>

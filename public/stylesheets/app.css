@@ -1,0 +1,14 @@
+i.code {
+    
+    font-size: 3em;
+    background-color: red;
+}
+
+.container.main{
+    margin-top: 7em;
+}
+
+#del{
+    display: inline;
+    
+}
